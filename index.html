@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Link</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-cat">
+        <div class="body"></div>
+        <div class="head">
+            <div class="face"></div>
+        </div>
+        <div class="foot">
+            <div class="tummy-end">
+            </div>
+            <div class="bottom">
+            </div>
+            <div class="legs left">
+            </div>
+            <div class="legs right">
+            </div>
+        </div>
+        <div class="hands left">
+        </div>
+        <div class="hands right">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="letter">
+            <p>Happy Birthday, Raziq!</p>
+            <p>Congratulations on becoming 22 :3 </p>
+            <p>(ps: this letter will only open on your bday)</p>
+            <p id="demo"></p>
+
+            <a id="letterLink" href="full_letter.html" class="letter-link" style="pointer-events: none;">Click Me</a>
+        </div>
+    </div>
+
+    <script>
+    
+    var countDownDate = new Date("Feb 27, 2025 00:00:00").getTime();
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Unlocked.";
+            var letterLink = document.getElementById("letterLink");
+            letterLink.style.pointerEvents = "auto";
+            letterLink.style.backgroundColor = "red"; 
+        }
+    }, 1000);
+    </script>
+</body>
+</html>
