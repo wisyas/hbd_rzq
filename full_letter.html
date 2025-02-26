@@ -9,8 +9,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<button class="btn">Click Me!</button>
-
+    <div class="container">
+        <div class="letter">
+            <p>Hi! You have unlocked the letter! Congrats, to read my message click on the button below.</p>
+            <button onclick="startTyping()">Read</button>
+            <p id="demo"></p>
+            <script>
+                var texts = [
+                    'Hi! First of all I would like to say that Im really sorry for being unoriginal and using my old format.',
+                    'And, I just added a cat loading screen and thats it, but anyways happy birthday baby boy!',
+                    'I can\'t believe that it\'s been so long since we have together that I witnessed you grow into the person you are now.',
+                    'You\'ve grown a lot as a person and I am glad that I witnessed that, and I would like to say I\'m proud of you.',
+                    'I\'m glad that I met you and I hope to always be with you in the future. I know we have up and downs but I just want to say,',
+                    'thank you, for always being with me all the time, even when I\'m unbearable I have nothing but gratefulness in my heart.',
+                    'Thank you so much for making me happy most of the time (my bpd always comes out), and thank you for comoforting me when I need it.',
+                    'And, I just want to say too how proud I am of you, chasing your dreams, trying your best every time and I\'m glad you get the best scores',
+                    'I know I write a lot of letters for you but I don\'t think I highlight how much I adore you. First of all, the thing that I love most',
+                    'is your smile, and it\'s the first thing that I lowkey fell in love with. And then, your nose, it\'s so cute and big it makes me want to',
+                    'pinch it so much!. I honestly can\'t help but fall in love with most of your features because it\'s something that I like. Also!',
+                    'I love the fact that you reassure me most of the time when for example you miss my call, or you couldn\'t call me because of something',
+                    'I\'m sorry though for all the things I\'ve done and I\'ve been trying really hard to change since I\'m gonna be with you for the rest',
+                    'of my life. I still have a lot of time to grow as a person and become a better person each day for our relationship. ',
+                    'There\'s a lot of things that I am grateful for and I honestly cannot write all of them because my message would be too long.',
+                    'and, if you\'re still reading send a gif of a cat on messenger so I know you read through it all. Anyways, happy birthday! and I hope',
+                    'we are going to be together until the end of time, Fi dunya wa akhira <3',
+                    'Click to flip!'
+                ]; 
+                var speed = 50; 
+                var i = 0;
+                var j = 0; 
+        
+                function typeWriter() {
+                    if (j < texts.length) {
+                        if (i < texts[j].length) {
+                            document.getElementById("demo").innerHTML += texts[j].charAt(i);
+                            i++;
+                            setTimeout(typeWriter, speed);
+                        } else {
+                            i = 0; 
+                            j++; 
+                            document.getElementById("demo").innerHTML += '<br/><br/>'; 
+                            if (j < texts.length) {
+                                setTimeout(typeWriter, speed);
+                            }
+                        }
+                    }
+                }
+        
+                function startTyping() {
+                    i = 0; 
+                    j = 0; 
+                    document.getElementById("demo").innerHTML = ''; 
+                    typeWriter();
+                }
+            </script>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://i.imgur.com/sJhTaQd.png" alt ="pic" style="width:250px;height: 200px;">
+          </div>
+          <div class="flip-card-back">
+          </div>
+        </div>
+      </div> 
 </body>
 </html>
